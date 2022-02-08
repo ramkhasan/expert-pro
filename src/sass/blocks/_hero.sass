@@ -1,6 +1,7 @@
 .hero 
   color: $white-color
   background-color: $bg-color
+  z-index: 0
   &-block 
     display: flex
     align-items: center
@@ -184,7 +185,7 @@
       flex-direction: column
       padding-bottom: 0
     &-text 
-      padding-bottom: 60px
+      padding-bottom: 40px
       &__title 
         font-size: 14px
         & span 
@@ -207,13 +208,22 @@
         max-width: 240px
         padding: 10px
         z-index: 1
-        background-color: $black-color
         & br 
           display: block
         &-name 
           font-size: 14px
         &-function 
           font-size: 12px
+        &:after 
+          content: ""
+          display: block
+          position: absolute
+          top: 0
+          left: 0
+          z-index: -1
+          width: 100vw
+          height: 100%
+          background-color: $black-color
 @media (max-width: 320px)
   .hero 
     &-text 
